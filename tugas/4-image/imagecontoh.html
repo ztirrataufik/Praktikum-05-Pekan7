@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <title>Pilihan Buah</title>
+        <style>
+            img{
+                width: 30%;
+                border:1px solid blue;
+            }
+        </style>
+        <script>
+            function pilih(){
+                // ambil area select id=buah
+                let list = document.getElementById("buah");
+                let idx = list.selectedIndex;
+                console.log("buah pilihan anda " + list[idx].value);
+                let area_gambar = document.getElementById("gambar");
+                area_gambar.src="gambar/"+list[idx].value+".jpg";
+            }
+        </script>
+    </head>
+    <body>
+        <form id="frm">
+            Pilih Buah Favorit : <select id="buah" onchange="pilih()">
+                <option value="mangga">Mangga</option>
+                <option value="nanas">Nanas</option>
+                <option value="durian">Durian</option>
+                <option value="jambu">Jambu</option>
+            </select>
+        </form>
+        <br/>
+        <img src="gambar/mangga.jpg" alt="buah mangga" id="gambar"/>
+    </body>
+</html>
